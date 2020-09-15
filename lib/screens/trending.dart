@@ -7,6 +7,8 @@ import 'package:tiktok/config/api.dart';
 import 'package:http/http.dart' as http;
 import 'package:tiktok/screens/tiktokvideo.dart';
 
+import 'tiktokvideo.dart';
+
 class Trending extends StatefulWidget {
   @override
   _TrendingState createState() => _TrendingState();
@@ -15,7 +17,12 @@ class Trending extends StatefulWidget {
 class _TrendingState extends State<Trending> {
   PageController pageController;
   RequestController api = RequestController();
-  List<Widget> tikTokVideos = [];
+  List<Widget> tikTokVideos = [
+    TikTokVideo(),
+    TikTokVideo(),
+    TikTokVideo(),
+    TikTokVideo(),
+  ];
 
   getTrending() async {
     var cookies = await api.getCookie();
@@ -25,6 +32,9 @@ class _TrendingState extends State<Trending> {
         api.url,
         headers: api.headers,
       );
+      //print("This is the Body Start!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+      //print(response.body);
+      //print("This is the Body End!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
       Tiktok tiktok = Tiktok.fromJson(jsonDecode(response.body));
       tiktok.body.itemListData.forEach(
         (item) {

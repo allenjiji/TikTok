@@ -5,29 +5,33 @@ import 'package:tiktok/widget/rightItems.dart';
 import 'package:tiktok/widget/videoPlayer.dart';
 
 class TikTokVideo extends StatelessWidget {
-  final ItemListData data;
+  //final ItemListData data;
 
-  const TikTokVideo({@required this.data});
+  const TikTokVideo({data});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          TikTokVideoPlayer(url: data.itemInfos.video.urls[0]),
+          TikTokVideoPlayer(
+              url:
+                  "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly" /* data.itemInfos.video.urls[0] */),
           title(),
           RightItems(
-            comments: data.itemInfos.commentCount.toString(),
-            userImg: data.authorInfos.covers[0],
-            favorite: data.itemInfos.diggCount,
-            coverImg: data.musicInfos.covers[0],
-          ),
+              comments: '100', //data.itemInfos.commentCount.toString(),
+              userImg:
+                  'https://img.icons8.com/pastel-glyph/2x/user-male.png', //data.authorInfos.covers[0],
+              favorite: 50000000, //data.itemInfos.diggCount,
+              coverImg:
+                  'https://img.icons8.com/pastel-glyph/2x/user-male.png' //data.musicInfos.covers[0],
+              ),
           LeftItems(
-            description: data.itemInfos.text,
-            musicName: data.musicInfos.musicName,
-            authorName: data.musicInfos.authorName,
-            userName: data.authorInfos.uniqueId,
-          )
+              description: "The new Video", //data.itemInfos.text,
+              musicName: "Watch this Video", //data.musicInfos.musicName,
+              authorName: "creator", //data.musicInfos.authorName,
+              userName: 'creator' //data.authorInfos.uniqueId,
+              )
         ],
       ),
     );
