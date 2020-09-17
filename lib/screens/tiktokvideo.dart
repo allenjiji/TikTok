@@ -6,17 +6,20 @@ import 'package:tiktok/widget/videoPlayer.dart';
 
 class TikTokVideo extends StatelessWidget {
   //final ItemListData data;
+  final String url, description;
 
-  const TikTokVideo({data});
+  TikTokVideo({data, @required this.url, @required this.description});
 
   @override
   Widget build(BuildContext context) {
+    //print("This Is This");
+    //print(url);
     return Scaffold(
       body: Stack(
         children: <Widget>[
           TikTokVideoPlayer(
               url:
-                  "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly" /* data.itemInfos.video.urls[0] */),
+                  /* 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly' */ url /* data.itemInfos.video.urls[0] */),
           title(),
           RightItems(
               comments: '100', //data.itemInfos.commentCount.toString(),
@@ -27,7 +30,7 @@ class TikTokVideo extends StatelessWidget {
                   'https://img.icons8.com/pastel-glyph/2x/user-male.png' //data.musicInfos.covers[0],
               ),
           LeftItems(
-              description: "The new Video", //data.itemInfos.text,
+              description: description, //data.itemInfos.text,
               musicName: "Watch this Video", //data.musicInfos.musicName,
               authorName: "creator", //data.musicInfos.authorName,
               userName: 'creator' //data.authorInfos.uniqueId,

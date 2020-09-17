@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok/screens/trending.dart';
 
 class HomePage extends StatefulWidget {
+  static const routeName = 'home';
   @override
   _HomePageState createState() => _HomePageState();
 }
