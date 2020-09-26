@@ -17,7 +17,7 @@ class _TikTokVideoPlayerState extends State<TikTokVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network('${widget.url}')
+    _controller = VideoPlayerController.network('https://shawfloors.ca/video_soft/'+'${widget.url}')
       ..initialize().then((_) {
         setState(() {
           _controller.play();

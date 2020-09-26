@@ -53,14 +53,14 @@ class _TrendingState extends State<Trending> {
           print(tikTokVideos);
         });
       }); */
-      String url = 'http://etechnosys.co.in/video_soft/video/get_video';
+      String url = 'https://shawfloors.ca/video_soft/video/get_video';
       Response response = await get(url);
       var res = json.decode(response.body);
-      //print(json.decode(response.body));
-      //print(res["data"]);
+      print(json.decode(response.body));
+      print(res["data"]);
       List videoUrls = res['data'];
       videoUrls.forEach((element) {
-        String url = element['image_path'];
+        String url = element['url'];
         String description = element['title'];
         //print(url);
         setState(() {

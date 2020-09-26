@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:tiktok/screens/home.dart';
 //import 'package:google_fonts/google_fonts.dart';
 import './loginPage.dart';
 
@@ -17,7 +18,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     Timer(
         Duration(seconds: 3),
         () => Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (BuildContext context) => Login())));
+            MaterialPageRoute(builder: (BuildContext context) => HomePage())));
   }
 
   @override
